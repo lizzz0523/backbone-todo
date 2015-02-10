@@ -1,3 +1,13 @@
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -35,6 +45,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 10;
     right: 0;
     border-bottom: 1px solid #111;
     line-height: 50px;
@@ -84,14 +95,64 @@ body {
     overflow: hidden;
 }
 
-.todo .todo_list {
-    line-height: 50px;
-}
-
 .todo .todo_list li {
     border-bottom: 1px solid #e2e2e2;
+    line-height: 30px;
 }
 
-.todo .todo_done {
+.todo .todo_item {
+    padding: 10px 0 10px 50px;
+}
+
+.todo .todo_item span {
+    display: block;
+}
+
+.todo .todo_item .ui-check {
+    position: relative;
+    margin-left: -40px;
+    float: left;
+}
+
+.todo .todo_item__done {
     text-decoration: line-through;
+}
+
+.todo .todo_edit {
+    padding-right: 50px;
+}
+
+.todo .todo_edit a {
+    display: block;
+    margin-right: -50px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    color: #52a0e2;
+    -webkit-animation: fade-in 0.3s;
+}
+
+.todo .todo_edit a:active {
+    background-color: #eee;
+}
+
+.todo .todo_edit span {
+    display: block;
+    padding: 10px;
+}
+
+.todo .todo_edit input {
+    display: block;
+    margin: 0;
+    padding: 0px;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: none;
+    font-size: 16px;
 }

@@ -53,6 +53,11 @@ define([
 
                     event.preventDefault();
                     self._toggle(data, false);
+                },
+
+                done: function(event, data) {
+                    event.preventDefault();
+                    self._done(data);
                 }
             });
 
@@ -83,6 +88,13 @@ define([
         _toggle: function(data, editing) {
             var todo = data.todo;
             todo.set('editing', editing);
+        },
+
+        _done: function(data) {
+            var todo = data.todo,
+                done = todo.get('done');
+
+            todo.set('done', !done);
         }
     });
 

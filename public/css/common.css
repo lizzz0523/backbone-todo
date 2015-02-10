@@ -62,3 +62,28 @@
     font-size: 0;
     visibility: hidden;
 }
+
+.ui-check {
+    display: inline-block;
+    +display: inline;
+    +zoom: 1;
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+}
+
+.ui-check input {
+    display: none;
+}
+
+.ui-check i {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    transition: background-color 0.3s ease;
+}
+
+.ui-check input:checked~i {
+    background-color: #52a0e2;
+}
