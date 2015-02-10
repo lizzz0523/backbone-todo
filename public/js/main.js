@@ -9,6 +9,8 @@ require.config({
         'text': 'plugin/text',
         'ready': 'plugin/ready',
 
+        'iscroll': 'vendor/iscroll',
+        'fastclick': 'vendor/fastclick',
         'sightglass': 'vendor/sightglass',
         'rivets': 'vendor/rivets',
         'jquery': 'vendor/jquery',

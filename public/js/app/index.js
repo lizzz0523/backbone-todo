@@ -1,8 +1,9 @@
 define([
     'jquery',
     'underscore',
-    'backbone'
-], function ($, _, B) {
+    'backbone',
+    'fastclick'
+], function ($, _, B, FC) {
 
     var Main = B.View.extend({
             _inited: false,
@@ -70,6 +71,8 @@ define([
                     app: self,
                     el: elem
                 });
+
+                FC.attach(document.body);
 
                 if (!B.history.started) {
                     B.history.start();

@@ -3,9 +3,23 @@ define([
     'jquery',
     'underscore',
     'backbone',
-], function (rivets, $, _, B) {
+    'iscroll'
+], function (rivets, $, _, B, IScroll) {
 
     var TodoList = B.View.extend({
+        initialize: function() {
+            var self = this,
+                todos = self.collection;
+
+            self.scroller = new IScroll(self.$('.module_body').get(0));
+
+            self.listenTo(todos, 'add remove reset sort', function() {
+                _.defer(function() {
+                    self.scroller.refresh();
+                });
+            });
+        },
+
         render: function () {
             var self = this,
                 elem = self.el,
