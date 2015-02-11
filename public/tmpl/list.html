@@ -13,19 +13,22 @@
             <div class="todo_list">
                 <ul>
                     <li rv-each-todo="data:todos">
-                        <p class="todo_item" rv-unless="todo:editing" rv-class-todo_item__done="todo:done">
-                            <span class="ui-check" rv-on-click="done">
+                        <div rv-class-todo_editing="todo:editing">
+                            <span class="todo_check ui-check" rv-on-click="done">
                                 <input type="checkbox" rv-checked="todo:done" />
                                 <i>&nbsp;</i>
                             </span>
-                            <span rv-on-click="edit">{ todo:description }</span>
-                        </p>
-                        <p class="todo_edit" rv-if="todo:editing">
-                            <a href="#" rv-on-click="close">保存</a>
-                            <span>
+
+                            <a class="todo_save" href="#" rv-on-click="close">保存</a>
+
+                            <p class="todo_item" rv-unless="todo:editing" rv-on-click="edit">
+                                <span rv-class-todo_done="todo:done">{ todo:description }</span>
+                            </p>
+                        
+                            <p class="todo_edit" rv-if="todo:editing">
                                 <input type="text" rv-value="todo:description" rv-on-keyup="close" />
-                            </span>
-                        </p>
+                            </p>
+                        </div>
                     </li>
                 </ul>
             </div>

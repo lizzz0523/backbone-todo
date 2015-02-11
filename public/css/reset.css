@@ -50,3 +50,7 @@ table {
 a {
     color: inherit;
 }
+input {
+    font-family: inherit;
+    font-size: inherit;
+}
